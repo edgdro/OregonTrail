@@ -1,0 +1,60 @@
+======================================================================
+CS2110                         Lab #21				Fall11
+======================================================================
+
+And so we have reached the final lab.  I commend you for getting this far.
+I hope you have enjoyed the class and I hoped you all have learned a lot.
+
+Note: Yes I will be reading these so don't put anything in here I wouldn't ;) 
+Note: If your feedback is about a specific TA then don't put it in this file. Please email this to me. Don't be shy :) (brandon.whitehead@gatech.edu)
+Note: Please don't just say nothing and turn this in (you will receive no credit). I love feedback!
+
+If you have any immediate concerns then please email me.
+
+Feedback. (Please be honest as I use your responses to improve the course).
+
+1) What was/were the homework assignment(s) you hated the most? How could these been improved?
+The state machine homework, the state machine part was fine but there were so many modifications to the initial assignments it became confusing.
+However, the actual state machine part, not the K-Map part that we ended up not having to do, I felt was a good teaching tool.
+
+2) What was/were the homework assignments you liked the most?
+Homework 10, the Mode 3 homework, it was a good introduction to C and the graphical application was also a fun thing to work on.
+
+3) What topics in the class (ex State Machines, Assembly Recursion) do you think could be taught better or spent more time covering? Explain how.
+I understood most of the topics, but I guess Assembly Recursion, still not a big fan of it.
+
+If you have multiple topics in which you thought was hard then please order them by preference.
+(Examples of difficult topics include but not limited to LC3 Datapath, Basic Assembly, Recursive Assembly, Stack Smashing, Pointers, DMA, etc)
+
+5) Do you think the labs in general helped you learn the material?
+The labs were a good teaching tool, many of them had multiple parts that would help to reinforce each other, and I have actually done them all.
+	
+6) How do you feel about the quizzes? This change was made because students wished for more tests. (From this feedback file!)
+The quizzes were fine, There weren't that many and they were evenly spaced between the year.
+
+7) How do you feel about the timed labs? Do you think you was prepared for them? Why or why not?
+The timed labs were also fine, they weren't that difficult but still aptly tested the topic that they were over. I.e. if you understood the topic the assignment was short, otherwise no.	
+	
+8) What would you change about this class to make it better?
+Not have two professors.
+
+9) What was the one thing about this class you liked the most?
+The friendliness of the TAs.
+
+10) Do you think that two hours of office hours per week is enough (not enough) (too much)? Bear in mind that at any time you could have emailed a TA and scheduled an appointment?
+If you never went to office hours say so here.
+I never went to office hours because I felt I understood the material well enough.
+
+11) How much work have you put into this class? What grade do you hope that you get?
+I have put a lot of work into this class, mainly the homeworks that I have done essentially by myself, and I hope to get an A.
+
+12) Did you find the TAs helpful? Did your find your lab TAs helpful?  Feel free to use this space to praise a TA!  (If you had any problems with a TA then please email me your concerns)
+Yes I found the TAs helpful the few times that I asked them in lab, they were all friendly.
+
+12b) Your TAs did have to cover material that wasn't covered in lecture (The Makefile lab).  How were they at teaching this?
+They did an adequate job at the material they were teaching.
+
+13) If you have anything else to say about the class (Anything), say it here.
+This class was very useful and has taught me a wide variety of things and believe it is a good intro class.
+
+14) If you have anything funny you would like to say put it here. the funnier the comment the better :D!

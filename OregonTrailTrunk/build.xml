@@ -1,0 +1,69 @@
+<project name ="OregonTrailProject" basedir = "." default ="all">
+<!-- Built by Westley Schrack-->
+	<target name ="init">
+		<property name ="src" location ="src"/>
+		<property name ="build" location ="build"/>
+		<property name ="library" location = "lib"/>
+		<property name ="apidoc" location = "apidoc"/>
+
+		<path id="classpath">
+			<fileset dir="${library}" includes="forms-1.3.0.jar"/>
+			<fileset dir="${library}" includes="beansbinding-1.2.1.jar"/>
+			<fileset dir="${library}" includes="slick.jar"/>
+		</path>
+		<echo message = "Properties Established"/>
+	</target>
+
+	<target name ="prepare" depends="init">
+		<echo message = "Removing Previous Files"/>
+		<delete dir = "build"/>
+		<delete dir = "apidoc"/>
+		<mkdir dir ="${build}"/>
+		<mkdir dir ="${apidoc}"/>
+		<echo message = "Directories created"/>
+	</target>
+
+	<target name ="compile" depends="prepare">
+		<javac srcdir = "${src}" destdir="${build}" classpathref = "classpath" includeAntRuntime = "false" excludes = "edu/team32/oregontrail/test/**"/>
+	</target>
+
+	<target name ="javadoc" depends = "prepare">
+		<javadoc sourcepath = "${src}" destdir = "${apidoc}" additionalparam = "-quiet">
+			<classpath>
+				<path refid="classpath"/>
+			</classpath>
+			<bottom>
+          <![CDATA[<i>Copyright &#169; 2011 Westley Schrack and Team Thirty-Two.  All Rights Reserved.</i>]]>
+			</bottom>
+		</javadoc>
+	</target>
+
+	<target name = "jar" depends = "compile">
+		<jar basedir = "${build}" destfile="${build}/OregonTrailRun.jar">
+		<fileset dir = "${src}">
+			<include name = "images/"/>
+			<include name = "sounds/"/>
+		</fileset>
+		</jar>
+	</target>
+ 
+	<target name ="run" depends="compile, jar">
+		<java fork = "true" classname = "edu.team32.oregontrail.game.manager.Game">
+			<classpath>
+				<path refid="classpath"/>
+				<path location="${build}/OregonTrailRun.jar"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name ="all" depends = "run">
+
+	</target>
+
+	<target name ="clean">
+		<delete dir = "build"/>
+		<delete dir = "apidoc"/>
+	</target>
+</project>
+
+

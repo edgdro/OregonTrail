@@ -1,0 +1,12 @@
+-Hunting Game
+-Chat Client/Server
+-River crossing Game
+-Alternate Path
+-Images
+-Map Images
+-Runs with Ant
+-Store can buy items back
+-Sound
+-Additional Random Events
+-Unique design pattern
+	-Singleton (Map, Wagon)

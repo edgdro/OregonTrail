@@ -1,0 +1,49 @@
+10
+
+dir
+243
+https://team32-oregon-trail.googlecode.com/svn/trunk/OregonTrail/.metadata/.plugins
+https://team32-oregon-trail.googlecode.com/svn
+
+
+
+2011-10-10T16:58:32.804419Z
+105
+alcsatt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bd952615-6187-8483-be2e-b4008e81b2a7
+
+org.eclipse.ui.intro
+dir
+
+org.eclipse.jdt.core
+dir
+
+org.eclipse.core.runtime
+dir
+
+org.eclipse.debug.core
+dir
+
+org.eclipse.jdt.ui
+dir
+
+org.eclipse.ui.workbench
+dir
+
+org.eclipse.core.resources
+dir
+

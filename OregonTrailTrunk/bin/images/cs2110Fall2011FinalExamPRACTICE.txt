@@ -1,0 +1,237 @@
+CS2110 Fall 2010 Practice Final Exam 
+
+
+1P. Draw a state machine with 4 states numbered 00,01,10 and 11. Assume 
+    there are two inputs. Make up transitions involving the two inputs. 
+    Don't make it too simple nor should it be overly complicated. You 
+    can model it on a real world system or just make something up.
+    
+    a. Construct a truth table with the two state bits and the two
+       inputs as inputs and the next state as the outputs.
+       
+    b. Use k-maps to simplify.
+
+    c. Construct the boolean expressions for the two next state bits.
+    
+    d. Draw the circuit diagram for the state machine.
+    
+2P. Draw transistor level schematic circuit diagrams for NAND, NOR, NOT
+   gates and construct the truth tables for each.
+   
+   DONE
+
+3P. Convert the following LC-3 machine Language code back into assembly 
+   language (Note: you may need to add labels
+
+   Machine (in hex)     Binary                  LC3 Assembly  
+    3000                0011 0000 0000 0000     .orig x3000
+    280c				0010 1000 0000 1100		LD  R4, 12
+    e40e				1110 0100 0000 1110		LEA R2, R0, 15
+    a20b				1010 0010 0000 1011		LDI R1, 11
+    07fe				0000 0111 1111 1110		BRZP -2 
+    a00a				1010 0000 0000 1010		LDI R0, 10
+    7080				0111 0000 1000 0000		STR R0, R2, 0
+    903f				1001 0000 0011 1111		NOT R0, R0
+    1004				0001 0000 0000 0100		ADD R0, R0, R4
+    903f				1001 0000 0011 1111		NOT R0, R0
+    0402				0000 0100 0000 0010		BRZ 2
+    14a1				0001 0100 1010 0001		ADD R2, R2, 1
+    0ff6				0000 1111 1111 0110		BRNZP 10
+    f025				1111 0000 0010 0101		HALT
+    001a				0000 0000 0001 1010     .fill 26
+    fe00				1111 1110 0000 0000		.fill -512
+    fe02				1111 1110 0000 0010		.fill -510
+   
+    
+
+
+4P. Here is the current state of an LC-3 processor. If start it running 
+and execute exactly one instruction what will change? Show the new value 
+of any location by writing the new value next to it. 
+
+    PC      x3000 x3001
+    CC		P
+    r0      27 
+    r1      42
+    r2      16 x341f
+    r3      x340f  
+    r4      808
+    r5      1
+    r6      x5fff
+    r7      0
+    
+    x3000    add R1, R2, R3
+    x3001
+    x3002
+    x3003
+    x3004
+    
+
+5P. Examine the code below and fill out the table below:
+
+int a;
+static int b;
+
+
+int main(int argc, char *argv[])
+{
+    int c;
+    static int d;
+    char *p = "hello";
+    const int x = 42;
+    int *intptr;
+    static int *intptr2;
+    intptr = malloc(100*sizeof(int));
+    intptr2 = malloc(200*sizeof(int));
+    ...
+            <------------------------- Location ---------------------->
+            <----------- Static --------->                              <---- Lifetime --->
+Item        Code    Constant    Changeable      Stack       Heap        Block       Program
+a									X
+b									X
+argc											X
+argv											X
+c												X
+d									X
+p									X	
+*p												X
+i.e. "hello"
+x						X
+intptr														X
+*intptr											X
+intptr2														X
+*intptr2										X				
+
+
+6P. Write integer swap. Function will swap two integers in memory. 
+Show how to call it. For each line of code draw a picture of the stack 
+after executiuon of that line. 
+
+void swap (int *a, int *b)
+{
+	int t = *a;
+	*a = *b;
+	*b = t;
+}
+
+7P. Given any typical sort algorithm implemented in C that sorts
+integers convert it to function like qsort. You don't need to 
+memorize the sort algorithm. Note: This question is not about sorting 
+but rather function pointers. 
+
+8P. Assume you have a function: size_t getAlloc(void *ptr) that will 
+give you the size of a chunk of memory which has been dynamically 
+allocated given a pointer to the block of memory. Write: 
+
+
+
+    void *realloc(void *ptr, size_t newsize)
+    {
+		if(ptr == NULL)
+		{
+			return malloc(newsize);
+		}
+		else if(newsize == 0)
+		{
+			return free(ptr)
+		}
+		else
+		{
+			
+    
+    }
+    
+    Make sure your function handles the special cases: ptr = NULL and 
+    size = 0;
+    
+
+9P. Variable arguments (You may use the man page for varargs found here: 
+http://linux.die.net/man/3/stdarg) 
+Write a function int sumv(int n, ...) that will take in a number n and 
+then n ints (a variable number). The function will return the sum of the 
+ints not inluding n. 
+
+int sumv(int n, ...)
+{
+	int d;
+	int sum = 0;
+	va_list ap;
+	va_start(ap, n);
+	for(int x = 0; x<n; x++)
+	{
+		d = va_arg(ap, int);
+		sum +=d;
+	}
+	va_end(ap);
+	return sum;
+}
+ 
+
+10P. Pointer tracing 
+
+    Trace:
+                                a   b	p1	p2
+    int a = 99;      			99	
+    int b = 2;          			2					
+    int *p1 = &a;         				a
+    int *p2 = &b;            				b
+    p1 = p2;							b
+    a = 6;      				6
+    b = 7;      					7
+    *p2 = 67; 						67		
+       
+       
+    
+    Now show the output from this statement:
+    printf("%d %d %d %d\n", a, b, *p1, *p2);
+    
+    "6,67,67,67"
+    
+
+11P. Compare and contrast the . and the -> When should each be used? 
+What is meant by a deep copy versus a shallow copy of a struct? Give an 
+example of each. 
+
+-> is used for when the structure variable is a pointer
+. is used for when the structure variable is a direct variable
+
+A deep copy copies all the fields and makes copies of the dynamically allocated medmory pointed to by the fields
+A shallow copy copies all of the member field values, not used for dynamically allocated memory variables though.
+
+12P. Trace the following code:
+
+    int arr[] = {12, 65, 78, 34, 59, 222};
+    int arrsize = sizeof(arr)/sizeof(arr[0]);
+    int *p = arr + arrsize - 1;
+    for(int i=0; i<arrsize; i++, p--)
+    {
+        printf("%d %d %d\n", i, arr[i], *p);
+    }
+	
+	*p = 17
+	
+	"0 12  222"
+	"1 65  59"
+	"2 78  34"
+	"3 34  78"
+	"4 59  65"
+	"5 222 12"
+    
+13P. What does this function do?
+
+    int main(int argc, char *argv[])
+    {
+        if(argc == 0) return;
+        printf("%s\n", argv[0]);
+        main(--argc, ++argv);
+    }
+
+     Hint: Run it like this:
+     
+     ./main roses are red!
+	 
+	 It prints each word on a separate line
+     
+14P. Write factorial recursively in LC-3 assembly using the "official"
+     LC-3 calling convention.    
+    
